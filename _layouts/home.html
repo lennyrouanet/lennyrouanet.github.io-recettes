@@ -1,0 +1,20 @@
+{% include head.html %}
+<main>
+	<section class="liste-recettes">
+		<ul>
+			{% for recette in site.recettes %}
+			<li>
+				<a href="{{ recette.url }}">
+					<figure>
+						<img src="{{ site.url }}/assets/images/recettes/{{ recette.image }}" alt="{{ recette.title }}">
+						<figcaption>
+							<h2>{{ recette.title }}</h2>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+</main>
+{% include foot.html %}

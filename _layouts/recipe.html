@@ -1,0 +1,28 @@
+{% include head.html %}
+<main>
+	<section class="detail-recette">
+		<figure>
+			<img src="{{ site.url }}/assets/images/recettes/{{ page.image }}" alt="">
+			<figcaption>
+				<ul class="details">
+					<li><span>Type</span> {{ page.category }}</li>
+					<li><span>Temps de préparation</span> {{ page.preparation_time }} min</li>
+					<li><span>Nombre de parts</span> {{ page.number_of_parts }}</li>
+				</ul>
+			</figcaption>
+		</figure>
+		<article>
+			{{ content }}
+		</article>
+		<a href="/" class="button">Retourner à la liste des recettes</a>
+		<script>
+			let chekableElements = document.querySelectorAll('.detail-recette article ul li');
+			chekableElements.forEach(function(chekableElement) {
+				chekableElement.addEventListener('click', function() {
+					chekableElement.classList.toggle('check');
+				});
+			});
+		</script>
+	</section>
+</main>
+{% include foot.html %}

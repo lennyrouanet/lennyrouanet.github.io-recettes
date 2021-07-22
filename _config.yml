@@ -1,0 +1,4 @@
+collections:
+  recettes:
+    output: true
+    sort_by: title
